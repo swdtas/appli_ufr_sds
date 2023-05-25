@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <title>burkina_tech</title>
+    <title>gesta</title>
 </head>
 
 <body>
@@ -77,7 +77,7 @@
       </div>       
      </footer>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="/javascript.js"></script>
+    <script src="javascript.js"></script>
 </body>
 
 </html>
