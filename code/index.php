@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/logo1.png" type="images/xicon.png" />
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <title>gesta</title>
-</head>
-
-<body>
 <?php
     session_start();
       if(isset($_POST['connect'])){
           if(!empty($_POST['username']) AND !empty($_POST['password'])){
-              $username_defaut='admin1234@gmail.com';
+              $username_defaut='admin1234@gmail.om';
               $mot_de_passe_defaut='1234';
               $username_saisi=htmlspecialchars($_POST['username']);
               $mot_de_passe_saisi=htmlspecialchars($_POST['password']);
@@ -33,22 +18,37 @@
       }
       
   ?> 
-    <header>
-    <canvas id="canvas" style="position : absolute; top : 0px; left : 0px;"></canvas>
-<script type="text/javascript" src="http://sheepeuh.com/rain/dat.gui.js"></script>
-<div style="position : absolute; bottom : 0px; left : 0px; margin : 20px; padding : 5px; background-color:#ce3635;">
-  <a href="http://sheepeuh.com" style="color: white; text-decoration : none; font-family: 'Lato', sans-serif; text-shadow: 1px 1px 1px black;">Me</a>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo1.png" type="images/xicon.png" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <title>gesta</title>
+</head>
+<body>
+<div id="loading">
+  <div class="spinner"></div>
+</div>
+
+<header>
 </div>
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid ">
               <div >
               <a class="navbar-brand" href="#">
-                <img src="images/logo.jpeg" alt="" width="100"style=" border-radius: 10px;" height="80" class="d-inline-block align-text-top">
-                <h4 class="d-inline-block align-text-top text-white pt-3 ">Université-Joseph-Ki-Zerbo <br class="align-text-center">UFR: Sciences de la santé</h4> 
+                <img class="img-fluid" src="images/logo.jpeg" alt="" width="100"style=" border-radius: 10px;" height="80" class="d-inline-block align-text-top">
+                <h4 class="d-inline-block align-text-top text-white  ">Université-Joseph-Ki-Zerbo <br class="align-text-center">UFR: Sciences de la santé</h4> 
               </a>
             </div>
               <div >
-               <a href=""><button type="button" name="connect"  class="btn btn-outline-warning">connexion</button></a>
+               <a href="#"><button type="button" name="connect"  class="btn btn-outline-warning">connexion</button></a>
               </div>   
             </div>
           </nav>

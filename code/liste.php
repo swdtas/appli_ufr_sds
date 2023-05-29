@@ -21,19 +21,20 @@
       </a>
     </div>
       <div >
-       <a href="/gesta/enregistrement.php"><button type="button" name class="btn btn-outline-warning">Inscription</button></a>
+       <a href="/appli_gesta/code/enregistrement.php"><button type="button" name class="btn btn-outline-warning">Inscription</button></a>
       </div>
       <div>
-      <a href="/gesta/liste.php"><button type="button" name class="btn btn-outline-warning">Consulter la liste</button></a>
+      <a href="/appli_gesta/code/liste.php"><button type="button" name class="btn btn-outline-warning">Consulter la liste</button></a>
       </div>
       <div>
-      <a href="/gesta/index.php"><button type="button" name class="btn btn-outline-warning">Déconnexion</button></a>
+      <a href="/appli_gesta/code/index.php"><button type="button" name class="btn btn-outline-warning">Déconnexion</button></a>
       </div>
     </div>
   </nav>
 </header>
 <main>
-<div class="table_etudiant">
+  <div class="row container-fluid">
+<div class="table_etudiant  col-lg-12 col-ms-12 col-xm-12 col-md-12">
 <table>
     <tr class="ligne1">
         <th>Nom</th>
@@ -76,6 +77,7 @@
     $connect = null;
     ?>
 </table>
+</div>
 </div>
 </main>
 <footer >

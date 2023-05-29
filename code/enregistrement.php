@@ -53,13 +53,13 @@
               </a>
             </div>
               <div >
-               <a href="/gesta/enregistrement.php"><button type="button" name class="btn btn-outline-warning">Inscription</button></a>
+               <a href="/appli_gesta/code/enregistrement.php"><button type="button" name class="btn btn-outline-warning">Inscription</button></a>
               </div>
               <div>
-              <a href="/gesta/liste.php"><button type="button" name class="btn btn-outline-warning">Consulter la liste</button></a>
+              <a href="/appli_gesta/code/liste.php"><button type="button" name class="btn btn-outline-warning">Consulter la liste</button></a>
               </div>
               <div>
-              <a href="/gesta/index.php"><button type="button" name class="btn btn-outline-warning">Déconnexion</button></a>
+              <a href="/appli_gesta/code/index.php"><button type="button" name class="btn btn-outline-warning">Déconnexion</button></a>
               </div>
             </div>
           </nav>
@@ -67,26 +67,30 @@
     <main>
       
         <section id="inscription" class="enregist">
-          <div class="text-center display-5">
-          </div>
+        <div class="row">
+    <div class="col-sm-6">
+    <h2 class="text-lg-center text-sm-left"> Veuillez entrez les informations de l'étudiant:</h2>
+  
+    </div>
+  
          <form class="form2" action="enregistrement.php" method="POST">
-               <h2>Informations de l'étudiant:</h2>
-            <label for="nom">Nom:</label>
+               
+            <label for="nom">Nom:<span class="text-danger">*</span></label>
             <input type="text" id="nom" name="nom" required ><br><br>
-            <label for="prenom">Prénom(s):</label>
+            <label for="prenom">Prénom(s):<span class="text-danger">*</span></label>
             <input type="text" id="prenom" name="prenom" required><br><br>           
-            <label for="date_naissance">Date de naissance :</label>
+            <label for="date_naissance">Date de naissance :<span class="text-danger">*</span></label>
             <input type="date" name="date_naissance" id="date_naissance" required><br><br>
-            <label for="genre">Genre :</label>
-            <select  type="text" id="genre" name="genre">
+            <label for="genre">Genre :<span class="text-danger">*</span></label>
+            <select  type="text" class="choix" id="genre" name="genre">
                 <option value="homme">Homme</option>
                 <option value="femme">Femme</option>
             </select><br><br>          
-            <label for="date_inscription">Date d'inscription :</label>
+            <label for="date_inscription">Date d'inscription : <span class="text-danger">*</span></label>
             <input type="date" id="date_inscription" name="date_inscription" required><br><br> 
-            <label for="contact">contact de la personne en cas de besoin:</label>
-            <input type="tel" id="contact" name="contact" > <br><br>   
-            <input id="enregistre" name="enregistre" type="submit" value="Enregistrer">
+            <label for="contact">Nom de la Personne en cas de besoin: </label>
+            <input type="text" id="contact" name="contact" > <br><br>   
+            <a href="#" onclick="alert('Vos données ont été bien enregistrées')">  <input id="enregistre" name="enregistre" type="submit" value="Enregistrer"></a>
             </form>
            
         </section>
