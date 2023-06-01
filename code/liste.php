@@ -8,41 +8,26 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <title>liste</title>
+    <title>liste des etudiants</title>
 </head>
 <body>
-<header>
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid ">
-      <div >
-      <a class="navbar-brand" href="#">
-        <img src="images/logo.jpeg" alt="" width="100"style=" border-radius: 10px;" height="80" class="d-inline-block align-text-top">
-        <h4 class="d-inline-block align-text-top text-white pt-3 ">Université-Joseph-Ki-Zerbo <br class="align-text-center">UFR: Sciences de la santé</h4> 
-      </a>
-    </div>
-      <div >
-       <a href="/appli_gesta/code/enregistrement.php"><button type="button" name class="btn btn-outline-warning">Inscription</button></a>
-      </div>
-      <div>
-      <a href="/appli_gesta/code/liste.php"><button type="button" name class="btn btn-outline-warning">Consulter la liste</button></a>
-      </div>
-      <div>
-      <a href="/appli_gesta/code/index.php"><button type="button" name class="btn btn-outline-warning">Déconnexion</button></a>
-      </div>
-    </div>
-  </nav>
-</header>
+<?php  include('header.php');?>
 <main>
   <div class="row container-fluid">
 <div class="table_etudiant  col-lg-12 col-ms-12 col-xm-12 col-md-12">
+
 <table>
     <tr class="ligne1">
+        <!-- <th>INE</th> -->
         <th>Nom</th>
         <th>Prénom</th>
         <th>Date de naissance</th>
         <th>Genre</th>
         <th>Date d'inscription</th>
         <th>Contact</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
+        <th>Détails</th>
     </tr>
 
     <?php
@@ -54,20 +39,44 @@
     include('connexion_base.php');
 
     // Récupérer les données de la base de données
-    $sql = "SELECT nom, prenom, date_naissance, genre, date_inscription, contact FROM etudiant";
+    $sql = "SELECT id, nom, prenom, date_naissance, genre, date_inscription, personne_besoin FROM etudiant";
     $result = $connect->query($sql);
 
     if ($result->rowCount() > 0) {
         // Afficher les données dans le tableau
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
             echo "<tr>";
-            echo "<td>".$row["nom"]."</td>";
+            // echo "<td>".$row["ine"]."</td>";
+            echo "<td>".$row["nom"]."</td>";        
             echo "<td>".$row["prenom"]."</td>";
             echo "<td>".$row["date_naissance"]."</td>";
             echo "<td>".$row["genre"]."</td>";
             echo "<td>".$row["date_inscription"]."</td>";
-            echo "<td>".$row["contact"]."</td>";
-            echo "</tr>";
+            echo "<td>".$row["personne_besoin"]."</td>";                 
+        echo '
+            <td class="text-black">
+                <a class="soulig"href="modifier.php?id=' . $row["id"] . '">
+  
+                    <button type="button" class="btn btn-warning">modifier</button>
+                    
+                </a>
+            </td>';
+            echo '
+            <td class="text-danger">
+                <a class="soulig"  href="supprimer.php?id=' . $row["id"] . '">
+                <button type="button" class="btn btn-danger">supprimer</button>
+                    
+                </a>
+            </td>';
+            echo '
+            <td class="text-danger">
+                <a class="soulig"  href="?id=' . $row["id"] . '">
+                <button type="button"class="btn btn-info">Détails</button>
+                    
+                </a>
+            </td>';
+
+                    echo "</tr>";
         }
     } else {
         echo "<tr><td colspan='6'>Aucune donnée trouvée.</td></tr>";
@@ -80,12 +89,7 @@
 </div>
 </div>
 </main>
-<footer >
-      <div class="row ">
-        <div class="container-fluid">
-        <p class=" pt-2 text-center text-white">© 2023 - Gesta - Université-Joseph-Ki-Zerbo - UFR/SDS </p>
-      </div>       
-     </footer>
+<?php  include('footer.php');?>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="javascript/javascript.js"></script>
 </body>

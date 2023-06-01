@@ -12,6 +12,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  font-family: comic sans ms;
   position: static;
   overflow-x: hidden;
   background-image: url(https://th.bing.com/th/id/R.26704c48c5b799df0be506aed3e3d626?rik=DVZgjpELDBdOJw&pid=ImgRaw&r=0);
@@ -96,7 +97,7 @@ footer {
 .form2 {
   box-shadow: 5px solid green !important;
   height: 300px;
-  width: 100%;
+  width: 80%;
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
@@ -167,36 +168,37 @@ table {
   border-collapse: collapse;
   background-color: white;
 }
-
 th, td {
   padding: 10px;
   text-align: left;
   border: 2px solid #3a7027;
 }
-
 tr:nth-child(even) {
   background-color: #e6eee7;
 }
-
 #tr1:hover {
   background-color: #e0e0e0;
 }
-
 .table_etudiant {
   margin-top: 5%;
   height: 400px;
   overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
+  position: relative;
 }
 .table_etudiant::-webkit-scrollbar {
   width: 6px;
 }
-
 .ligne1 {
   background-color: rgb(9, 125, 9);
   color: white;
   position: sticky;
   top: 0;
   z-index: 2;
+  height: auto;
+}
+.soulig{
+  text-decoration: none !important;
+  color: black;
 }
