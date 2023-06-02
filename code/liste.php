@@ -37,17 +37,11 @@
             header('Location:index.php');
           }
           include('connexion_base.php');
-          // Récupérer la dernière valeur auto-incrémentée
-          $prefix = 'E';   
-          $year = date('Y');
-          
+
           // Récupérer les données de la base de données
           $sql = "SELECT id, nom, prenom, date_naissance, genre, date_inscription, personne_besoin FROM etudiant";
           $result = $connect->query($sql);
-          
-
           if ($result->rowCount() > 0) {
-            $id_format = $prefix . $year;
               // Afficher les données dans le tableau
               while($row = $result->fetch(PDO::FETCH_ASSOC)) {
                   echo "<tr>";
@@ -73,7 +67,7 @@
                   </td>';
                   echo '
                     <td class="text-danger">
-                        <a onclick="return confirm(\'Voulez vous vraiment supprimer\');" class="soulig" href="supprimer.php?id=' . $row["id"] . '">
+                        <a onclick="return confirm(\'Voulez vous vraiment\');" class="soulig" href="supprimer.php?id=' . $row["id"] . '">
                             <button type="button" class="btn btn-danger">supprimer</button>
                         </a>
                     </td>';
