@@ -9,7 +9,7 @@
               </a>
             </div>
               <div >
-               <a href="/appli_gesta/code/enregistrement.php"><button type="button" name class="btn btn-outline-warning">Inscription</button></a>
+               <a href="/appli_gesta/code/enregistrement.php"><button type="button" name class="btn btn-outline-warning">Inscrire</button></a>
               </div>
               <div>
               <a href="/appli_gesta/code/liste.php"><button type="button" name class="btn btn-outline-warning">Consulter la liste</button></a>

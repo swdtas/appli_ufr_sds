@@ -30,12 +30,13 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <title>accueil</title>
+    <title>gesta</title>
 </head>
 <body>
 <div id="loading">
   <div class="spinner"></div>
 </div>
+
 <header>
 </div>
         <nav class="navbar navbar-light bg-light">
@@ -69,10 +70,9 @@
       </div>
      </div>                
     </main>
-    <?php  include('footer.php');?>
+     <?php  include('footer.php');?>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="javascript.js"></script>
-    <script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -1,26 +1,34 @@
 <?php
-session_start();
-    if (!isset($_SESSION['password'])) {
-        header('Location: index.php');
-        exit;
+    session_start();
+      
+      
+  ?> 
+
+
+if {
+            
+            
+        }
+
+
+
+        if ($result->rowCount()==0) {
+        $onglet_inscription = '<a href="#" class=inscript><button type="button" name="inscr" class="btn btn-outline-warning">Inscription</button></a>';
+        echo" $onglet_inscription";
+    }else{
+    $username= $_POST['username']; 
+    $mot_pass_saisi = $_POST['password'];   
+    $query = "INSERT INTO user (nom_utilisateur,mot_pass)VALUES (:username, :mot_pass_saisi)";
+    $query_run = $connect->prepare($query);
+    $query_run->bindParam(':username', $username);
+    $query_run->bindParam(':mot_pass_saisi', $mot_pass_saisi);
+    if ($query_run->execute()) {
+        echo'<h6 class=" incorrect text-danger"> Vos données ont été bien enregistrées!</h6>'; 
+       } else {
+        $msg = "Erreur d'enregistrement";
+      }
+
     }
+   
 
-    include('connexion_base.php');
-// Récupérer la valeur de recherche
-$search = isset($_GET['search']) ? $_GET['search'] : '';
-
-// Modifier votre requête SQL pour inclure la clause WHERE avec le filtre de recherche
-$sql = "SELECT nom, prenom, date_naissance, genre, date_inscription, personne_besoin FROM etudiant WHERE nom LIKE :search OR prenom LIKE :search";
-$stmt = $connect->prepare($sql);
-$stmt->bindValue(':search', '%' . $search . '%');
-$stmt->execute();
-// Récupérer la valeur de recherche
-$search = isset($_GET['search']) ? $_GET['search'] : '';
-
-// Modifier votre requête SQL pour inclure la clause WHERE avec le filtre de recherche
-$sql = "SELECT nom, prenom, date_naissance, genre, date_inscription, personne_besoin FROM etudiant WHERE nom LIKE :search OR prenom LIKE :search";
-$stmt = $connect->prepare($sql);
-$stmt->bindValue(':search', '%' . $search . '%');
-$stmt->execute();
-?>
-
+    <?php  include('user.php');?>

@@ -110,7 +110,7 @@ function showUpdateForm($row) {
             <label for="personne_besoin">personne en cas de besoin :</label>
             <input type="text" name="personne_besoin" value="<?php echo $row['personne_besoin']; ?>"><br>
 
-            <input type="submit" onclick="alert(' Données modifiées avec succès')" value="Modifier">
+            <input type="submit" onclick="return confirm('Voulez vous vraiment modifier')" value="Modifier">
         </form>
 </section> 
  </main>

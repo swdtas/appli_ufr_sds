@@ -16,8 +16,7 @@
         $date_naissance = $_POST['date_naissance'];
         $genre = $_POST['genre'];
         $date_inscription = $_POST['date_inscription'];
-        $personne_besoin = $_POST['personne_besoin'];          
-        $id_format = $prefix . $year .str_pad($last_id, 5, '0', STR_PAD_LEFT) ;    
+        $personne_besoin = $_POST['personne_besoin'];              
         $query = "INSERT INTO etudiant (ine, nom, prenom, date_naissance, genre, date_inscription, personne_besoin)
                   VALUES (:ine, :nom, :prenom, :date_naissance, :genre, :date_inscription, :personne_besoin)";
 
